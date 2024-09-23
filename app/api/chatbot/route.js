@@ -1,4 +1,4 @@
-import OpenAI from 'openai';
+import OpenAI from "openai";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -7,9 +7,9 @@ export const POST = async (req, res) => {
 
 	try {
 		const completion = await openai.chat.completions.create({
-			messages: [{ role: 'user', content: prompt }],
-			model: 'gpt-3.5-turbo-16k-0613',
-			response_format: { type: 'text' },
+			messages: [{ role: "user", content: prompt }],
+			model: "gpt-3.5-turbo",
+			response_format: { type: "text" },
 		});
 
 		const response = completion.choices[0].message.content;
